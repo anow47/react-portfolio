@@ -1,0 +1,22 @@
+svg {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  svg path {
+    stroke: none;
+    fill: var(--thired-bg-color);
+  }
+
+  /**** Svg Responsive ****/
+  @media (min-width: 768px) {
+    header .toggle-menu {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    svg {
+      padding: 62px 0;
+    }
+  }

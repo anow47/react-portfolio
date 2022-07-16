@@ -1,13 +1,199 @@
-body {
+/* Start Global Rules*/
+:root {
+  --main-color: #e742b4; /*  9c1d8b*/
+  --bg-color: #212121;
+  --second-bg-color: #3b3737;
+  --thired-bg-color: #2b2929; 
+  --second-color: #ffffff;
+  --section-padding: 100px;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+}
+a {
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 97px;
+}
+.btn {
+  width: fit-content;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-right: 5px; 
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--second-color);
+  transition: 0.5s;
+  background: linear-gradient(to right, var(--main-color) 50%, #212121 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+.btn:hover {
+  background-position: left bottom;
+  color: var(--second-color);
+}
+@media screen and (max-width: 768px) {
+  .btn {
+    padding: 9px 10px;
+    font-size: 15px;
+    margin-right: 5px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .btn {
+    padding: 9px 10px;
+    margin-right: 5px;
+  }
+}
+h2 {
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 0 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--second-color);
+  padding-bottom: 40px;
+  padding: 20px 0;
+}
+/* Small devices */
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+/* Medium devices */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Larg devices */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Extra Large devices */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules*/
+
+
+/*==========Styling scrollable elements==========*/
+.js-scroll {
+  opacity: 0;
+  /* transition: opacity 500ms; */
+}
+.js-scroll.scrolled {
+  opacity: 1;
+}
+.scrolled.fade-in {
+  animation: fade-in 0.8s ease-in-out both;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*scroll animation*/
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*=======bounceInRight the toggle menu when clicked========*/
+@-webkit-keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0) scaleX(3);
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0) scaleX(1);
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0) scaleX(0.995);
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0) scaleX(3);
+    transform: translate3d(-3000px, 0, 0) scaleX(3);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0) scaleX(1);
+    transform: translate3d(25px, 0, 0) scaleX(1);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    transform: translate3d(-10px, 0, 0) scaleX(0.98);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0) scaleX(0.995);
+    transform: translate3d(5px, 0, 0) scaleX(0.995);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
